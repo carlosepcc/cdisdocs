@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[12pt]{report}
+\documentclass[12pt,final, spanish, pagelimitmode=flex, noloa]{report}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -10,7 +10,7 @@
 \usepackage{color}
 \usepackage[utf8]{inputenc}
 
-\usepackage{amssymb}
+%\usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{empheq}
@@ -34,37 +34,41 @@
 \definecolor{secondary}{RGB}{243,243,244}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% Define an orangebox command %%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand\orangebox[1]{\fcolorbox{ocre}{mygray}{\hspace{1em}#1\hspace{1em}}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% English Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\centro{Línea de Investigación de Informática Aplicada a la Sociedad}
+\facultad{4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\date{\today}
 \title{
-{Sistema de Gestión para el Proceso de Comisión Disciplinaria de la Facultad}\\
-{\large Institution Name}\\
+{Sistema de Gestión para el Proceso de Comisión Disciplinaria en la Facultad 4}\\
+{\large Universidad de las Ciencias Informáticas}\\
 {\includegraphics{uci_logo.svg}}
 }
-\author{Author Name}
-\date{Day Month Year}
-\author{Carlos Enrique}
+\author{Carlos Enrique Piñeiro Cárdenas}
+%\addauthor{Carlos Enrique Piñeiro Cárdenas}
+%\addauthor{Ángel Luis Fumero Sánchez}
+%\addtutor{MsC. Yordankis Matos López}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-    \maketitle
-    \include{chapters/abstract}
-    \tableofcontents
+  \maketitle
 
-    \include{chapters/chapter-1.tex}
-
-    \include{chapters/chapter-2.tex}
-
-    \include{chapters/chapter-3.tex}
-
-    \appendix
-    \bibliographystyle{plain}
-    \bibliography{bib/ref.bib}
-    \include{chapters/appendix.tex}
+  \include{chapters/dedication}
+  \include{chapters/acknowledgements.tex}
+  \include{chapters/abstract}
+  \tableofcontents
+  \listoffigures 
+  \include{chapters/introduction}
+  \include{chapters/chapter-1}
+  \include{chapters/chapter-2}
+  \include{chapters/chapter-3}
+  \include{chapters/conclusions}
+  \include{chapters/suggestions}
+  \appendix
+  \include{chapters/appendix}
+  \bibliographystyle{plain}
+  \bibliography{bib/ref.bib}
 \end{document}
