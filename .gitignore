@@ -5,3 +5,7 @@ build/
 *.log
 *.synctex.gz
 *.toc
+*.bbl
+*.lof
+*.blg
+.editorconfig

@@ -6,28 +6,34 @@
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{svg,svgcolor}
-\graphicspath{ {img/} }
+\graphicspath{ {img} }
 \usepackage{color}
 \usepackage[utf8]{inputenc}
 
-%\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{empheq}
+%s\usepackage[english]{babel}
+\usepackage[spanish]{babel}
+
+%%%%%% Default %%%%%%%
 \usepackage{mdframed}
 \usepackage{booktabs}
 \usepackage{psfrag}
-\usepackage{pgfplots}
-\usepackage{bm}
+%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%% temporal %%%%%%%%%%%%
+\usepackage[rightcaption]{sidecap}
+
+\usepackage{wrapfig}
 \usepackage{lipsum}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Other Settings
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Page Setting %%%%%%
 \geometry{a4paper}
+
+
+%%%%%% Change default values %%%%%
+ \addto\captionsspanish{\renewcommand{\listtablename}{Índice de tablas}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{primary}{RGB}{243,102,25}
@@ -35,19 +41,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\centro{Línea de Investigación de Informática Aplicada a la Sociedad}
-\facultad{4}
+\newcommand{\centro}{la Línea de Investigación de Informática Aplicada a la Sociedad}
+\newcommand{\Fac}{Facultad 4}
+\newcommand{\uci}{Universidad de las Ciencias Informáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\date{\today}
+\date{La Habana, \today}
 \title{
 {Sistema de Gestión para el Proceso de Comisión Disciplinaria en la Facultad 4}\\
-{\large Universidad de las Ciencias Informáticas}\\
-{\includegraphics{uci_logo.svg}}
+{\begin{figure}
+    \includegraphics{uci_logo.pdf}
+    \centering
+\end{figure}}
 }
-\author{Carlos Enrique Piñeiro Cárdenas}
+\author{
+        Carlos Enrique Piñeiro Cárdenas\\
+        Angel Luis Fumero Sánchez
+        }
 %\addauthor{Carlos Enrique Piñeiro Cárdenas}
 %\addauthor{Ángel Luis Fumero Sánchez}
 %\addtutor{MsC. Yordankis Matos López}
@@ -55,20 +67,22 @@
 
 \begin{document}
   \maketitle
-
-  \include{chapters/dedication}
-  \include{chapters/acknowledgements.tex}
-  \include{chapters/abstract}
+  \include{modules/phrase.tex}
+  \include{modules/dedication}
+  \include{modules/acknowledgements.tex}
+  \include{modules/abstract}
   \tableofcontents
-  \listoffigures 
-  \include{chapters/introduction}
-  \include{chapters/chapter-1}
-  \include{chapters/chapter-2}
-  \include{chapters/chapter-3}
-  \include{chapters/conclusions}
-  \include{chapters/suggestions}
+  \listoffigures
+  \listoftables
+  \newpage
+  \include{modules/introduction}
+  \include{modules/chapter_1/chapter-1}
+  \include{modules/chapter_2/chapter-2}
+  \include{modules/chapter_3/chapter-3}
+  \include{modules/conclusions}
+  \include{modules/suggestions}
   \appendix
-  \include{chapters/appendix}
+  \include{modules/appendix}
   \bibliographystyle{plain}
   \bibliography{bib/ref.bib}
 \end{document}
