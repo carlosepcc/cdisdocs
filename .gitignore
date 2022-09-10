@@ -2,10 +2,14 @@ build/
 *build/
 *.pdf
 *.aux
+*.lof
 *.log
+*.lot
 *.synctex.gz
 *.toc
 *.bbl
-*.lof
 *.blg
+*.fls
+*latexmk
+*.directory
 .editorconfig

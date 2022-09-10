@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[12pt,final, spanish, pagelimitmode=flex, noloa]{report}
+\documentclass[12pt,final, spanish]{report}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,62 +19,77 @@
 \usepackage{psfrag}
 %%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%% temporal %%%%%%%%%%%%
-\usepackage[rightcaption]{sidecap}
-
-\usepackage{wrapfig}
+%%%%%%%% temporal %%%%%%%%
 \usepackage{lipsum}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% utilities %%%%%%%%%%
+\usepackage{import}
 
 % Other Settings
 
-%%%%%%%%%% Page Setting %%%%%%
+%%%%%%%%%% Page Setting %%%%%%%%%%%%%%%%%%%%%%
 \geometry{a4paper}
 
 
-%%%%%% Change default values %%%%%
+%%%%%% Change default values %%%%%%%%%%%%%%%%%
 \addto\captionsspanish{\renewcommand{\listtablename}{Índice de tablas}}
 %\renewcommand*\contentsname{Índice de tablas}
-%%%%%%%%%%%%%%%%%%%%%%%%%% Define some useful colors %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Define some useful colors %%%%%%%%%%%%
 \definecolor{primary}{RGB}{243,102,25}
 \definecolor{secondary}{RGB}{243,243,244}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%% Environments %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\centro}{la Línea de Investigación de Informática Aplicada a la Sociedad}
-\newcommand{\Fac}{Facultad 4}
-\newcommand{\uci}{Universidad de las Ciencias Informáticas}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Environments %%%%%%%%%%%%%
+\newcommand{\centro}{la Línea de Investigación de Informática Aplicada a la Sociedad }
+\newcommand{\Fac}{Facultad 4 }
+\newcommand{\uci}{Universidad de las Ciencias Informáticas }
+\newcommand{\ucilogo}
+{\\
+\begin{figure}
+    \includegraphics{uci_logo.pdf}\centering
+\end{figure}
+}
+\newcommand{\autorA}{Ángel Luis Fumero Sánchez }
+\newcommand{\autorB}{Carlos Enrique Piñeiro Cárdenas }
+\newcommand{\tutorA}{MsC. Yordakis Matos López }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\dayfield}{\makebox[8mm]\hrulefill\ }
+\newcommand{\monthfield}{\makebox[1.5in]\hrulefill\ }
+\newcommand{\yearfield}{\makebox[15mm]\hrulefill\ }
+\newcommand{\signaturefield}[2][Autor]{
+\vspace{15mm}
+\begin{minipage}{6cm}
+	\centering
+	\hrulefill  \\
+	#2			\\
+	\uci		\\
+	#1
+\end{minipage}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%
 
 \date{La Habana, \today}
-\title{
-{Sistema de Gestión para el Proceso de Comisión Disciplinaria en la Facultad 4}\\
-{\begin{figure}
-    \includegraphics{uci_logo.pdf}
-    \centering
-\end{figure}}
-}
-\author{
-        Carlos Enrique Piñeiro Cárdenas\\
-        Angel Luis Fumero Sánchez
-        }
+\title{{Sistema de Gestión para el Proceso de Comisión Disciplinaria en la \Fac de la \uci}\ucilogo}
+\author{\autorA\\\autorB}
+    
 %\addauthor{Carlos Enrique Piñeiro Cárdenas}
 %\addauthor{Ángel Luis Fumero Sánchez}
 %\addtutor{MsC. Yordankis Matos López}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
   \maketitle
   \include{modules/phrase.tex}
   \include{modules/dedication}
   \include{modules/acknowledgements.tex}
+  \include{modules/contact.tex}
+  \include{modules/declaration.tex}
   \include{modules/abstract}
   \tableofcontents
   \listoffigures
   \listoftables
-  \newpage
+  \pagebreak
   \include{modules/introduction}
   \include{modules/chapter_1/chapter-1}
   \include{modules/chapter_2/chapter-2}
