@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Define Article %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[12pt,final, spanish]{report}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{report}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Using Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Using Packages %%%%%%%%%%%%%%
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{svg,svgcolor}
@@ -43,9 +43,11 @@
 \newcommand{\Fac}{Facultad 4 }
 \newcommand{\uci}{Universidad de las Ciencias Informáticas }
 \newcommand{\ucilogo}
-{\\
+{
 \begin{figure}
-    \includegraphics{uci_logo.pdf}\centering
+    \includegraphics{uci_logo.pdf}\centering\\
+    \vspace{6mm}
+    \textbf{\Fac}
 \end{figure}
 }
 \newcommand{\autorA}{Ángel Luis Fumero Sánchez }
@@ -61,7 +63,6 @@
 	\centering
 	\hrulefill  \\
 	#2			\\
-	\uci		\\
 	#1
 \end{minipage}
 }
@@ -69,10 +70,14 @@
 
 %%%%%%%%%%%%%% Title & Author %%%%%%%%%%%%%%%%
 
-\date{La Habana, \today}
-\title{{Sistema de Gestión para el Proceso de Comisión Disciplinaria en la \Fac de la \uci}\ucilogo}
-\author{\autorA\\\autorB}
-    
+
+\title{
+	\ucilogo
+	Sistema de Gestión para el Proceso de Comisión Disciplinaria en la \Fac de la \uci 
+}
+\author{\autorA \\ \autorB \\ Tutor: \tutorA}
+\date{\vspace{2in} La Habana, \today\\  Año 64 de la Revolución}  
+ 
 %\addauthor{Carlos Enrique Piñeiro Cárdenas}
 %\addauthor{Ángel Luis Fumero Sánchez}
 %\addtutor{MsC. Yordankis Matos López}
